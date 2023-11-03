@@ -41,7 +41,7 @@
 
     private void Aceptar()
     {
-        mensaje = prod.Nombre + " - " + prod.Apellido + " - " + prod.Domicilio + " - " + prod.Edad.();
+        mensaje = prod.Nombre + " - " + prod.Apellido + " - " + prod.Domicilio + " - " + prod.Edad.ToString();
     }
 
     private void Limpiar()
@@ -49,7 +49,7 @@
         prod.Nombre = "";
         prod.Apellido = "";
         prod.Domicilio = "";
-        prod.Edad = "";
+        prod.Edad = 0;
         mensaje = "";
     }
 
