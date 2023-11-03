@@ -1,4 +1,6 @@
+using DatosPersonales.bdd.data;
 using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
-
+builder.Services.AddDbContext<Context>(opcion => opcion.UseSqlServer("name=connIan"));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
