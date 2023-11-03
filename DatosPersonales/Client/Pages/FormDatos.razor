@@ -1,0 +1,56 @@
+﻿@page "/formdatos"
+@using DatosPersonales.Shared.DTO;
+<h3>Form Datos</h3>
+<EditForm Model = "prod" OnSubmit="Aceptar">
+
+    <div>
+        <label>Nombre</label>
+        <InputText @bind-Value="prod.Nombre" />
+
+    </div>
+    <br />
+    <div>
+        <label>Apellido</label>
+        <InputText @bind-Value="prod.Apellido" />
+
+    </div>
+    <br />
+    <div>
+        <label>Domicilio</label>
+        <InputText @bind-Value="prod.Domicilio" />
+
+    </div>
+    <br />
+    <div>
+        <label>Edad</label>
+        <InputNumber @bind-Value="prod.Edad" />
+
+    </div>
+    <br />
+    <button type="submit">Aceptar</button>
+    <br />
+    <button @onclick=@(()=>Limpiar())>Limpiar</button>
+    <br />
+    <h5>@mensaje</h5>
+
+</EditForm>
+
+@code {
+    Persona prod = new Persona();
+    string mensaje = "";
+
+    private void Aceptar()
+    {
+        mensaje = prod.Nombre + " - " + prod.Apellido + " - " + prod.Domicilio + " - " + prod.Edad.();
+    }
+
+    private void Limpiar()
+    {
+        prod.Nombre = "";
+        prod.Apellido = "";
+        prod.Domicilio = "";
+        prod.Edad = "";
+        mensaje = "";
+    }
+
+}
