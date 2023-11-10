@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DatosPersonales.bdd.data.entity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace DatosPersonales.bdd.data
 {
     public class Context : DbContext
     {
+        public DbSet<Persona> Personas { get; set; }
         public Context(DbContextOptions options) : base(options)
         {
         }

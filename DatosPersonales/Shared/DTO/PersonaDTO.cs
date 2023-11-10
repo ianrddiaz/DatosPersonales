@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DatosPersonales.Shared.DTO
 {
-    public class Persona
+    public class PersonaDTO
     {
         public string Nombre { get; set; }
         public string Apellido { get; set; }
